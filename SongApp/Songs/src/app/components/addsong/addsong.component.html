@@ -1,0 +1,8 @@
+<h1>Add song info here</h1>
+<form (submit)="addSong($event)">
+  <ul class="box">
+    <li><input type="text" name="title" placeholder="Title" [(ngModel)]="titleValue"></li>
+    <li><input type="text" name="author" placeholder="Author" [(ngModel)]="authorValue"></li>
+    <li><input type="submit" value="SUBMIT"></li>
+  </ul>
+</form>

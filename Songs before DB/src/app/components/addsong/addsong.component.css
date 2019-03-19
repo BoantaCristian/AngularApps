@@ -1,0 +1,48 @@
+.box {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    float: center;
+    width: 800px;
+    padding: 10px;
+    height: 45%;
+}
+
+form li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 15px;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin:4%;
+}
+
+
+input[type=submit]{
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px;
+    background: rgb(158, 55, 255);
+    border: 0;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+    color: whitesmoke;
+    background: rgb(119, 109, 129);
+    transition: background 500ms;
+}
+
+input{
+    width: 50%;
+    height: 30px;
+}
+
+input[type=text]:focus {
+    border-color: rgb(158, 55, 255);
+}

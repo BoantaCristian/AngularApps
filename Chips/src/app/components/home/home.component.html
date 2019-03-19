@@ -1,0 +1,98 @@
+<mat-card>
+  <div class="title">Here are the best flavoured chips!</div>
+  <mat-form-field>
+    <mat-select placeholder="Select category">
+      <mat-option value="All" (click)="All($event)" id = "All"> All </mat-option>
+      <mat-option value="Lays" (click)="Lays($event)" id = "Lays"> Lays </mat-option>
+      <mat-option value="Chio" (click)="Chio($event)" id = "Chio"> Chio </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <!-- 
+    <mat-select *ngFor="let company of companies" placeholder="Select category">
+      <mat-option [value]="company.value" (click)="Function($event)" [id] = "company.value"> {{company.value}} </mat-option>
+    </mat-select>
+  -->
+
+  <mat-accordion *ngFor="let chip of chips">
+    <div *ngIf="option === 'All'"> <!--Display all chips-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{chip.name}} {{chip.sortiment}}
+        </mat-expansion-panel-header>
+        <div class="flex-container">
+          <div class="details">
+            <p>{{chip.name}} {{chip.sortiment}}</p>
+            <p class="desc">{{chip.description}}</p><br>
+            <p>{{chip.gramaj}}g.</p>
+            <p>{{chip.price}} lei</p>
+          </div>
+          <div class="picture">
+            <img src = "{{chip.linkpoza}}">
+          </div>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" (click)="addBag(chip)">Add to bag</button>
+        </div>
+      </mat-expansion-panel>
+    </div>
+
+    <div *ngIf="option === chip.name"> <!-- Clasification by name -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{chip.name}} {{chip.sortiment}}
+        </mat-expansion-panel-header>
+        <div class="flex-container">
+          <div class="details">
+            <p>{{chip.name}} {{chip.sortiment}}</p>
+            <p class="desc">{{chip.description}}</p><br>
+            <p>{{chip.gramaj}}g.</p>
+            <p>{{chip.price}} lei</p>
+          </div>
+          <div class="picture">
+            <img src = "{{chip.linkpoza}}">
+          </div>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" (click)="addBag(chip)">Add to bag</button>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </mat-accordion>
+</mat-card>
+
+<!--Footer-->
+<div class="footer-color">
+  <div class="footer">
+    <mat-accordion class="accordion-border">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="content">
+          <div class="portion-header">Shopping Bag</div> 
+          <div class="portion-header right">Total: {{total}}</div>
+        </mat-expansion-panel-header>
+        <div *ngFor="let b of bag">
+          <div class="content">
+            <div class="portion">
+              <p><img src = "{{b.logo}}"></p>
+            </div>
+            <div class="portion">
+              <p>{{b.name}}</p>
+            </div>
+            <div class="portion">
+              <p>{{b.sortiment}}</p>
+            </div>
+            <div class="portion">
+              <p>{{b.price}} lei</p>
+            </div>
+            <div class="portion">
+                <button mat-raised-button color="warn" (click)="deleteBag(b)">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="total" class="checkout">
+            <button mat-raised-button color="accent" (click)="checkOut()">CheckOut</button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

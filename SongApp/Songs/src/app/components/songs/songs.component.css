@@ -1,0 +1,83 @@
+.box {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    float: center;
+    width: 60%;
+    padding: 5px;
+}
+
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    flex: 50%;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: rgb(194, 130, 255);
+}
+
+.author {
+    flex: 50%;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: rgb(194, 130, 255);
+}
+
+.song {
+    flex: 50%;
+    text-align: left;
+    font-size: 16px;
+    padding: 0px 0px 5px 10px;
+    margin: 0px 0px 0px 0px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(195, 130, 255, 0.541);
+}
+
+.artist {
+    flex: 40%;
+    text-align: left;
+    font-size: 16px;
+    padding: 0px 0px 5px 10px;
+    margin: 0px 20px 0px 0px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(195, 130, 255, 0.541);
+
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: rgba(195, 130, 255, 0.541);
+}
+
+.delete{
+    color: #ffffff;
+    text-decoration: none;
+    background: rgb(158, 55, 255);
+    border: 0;
+    border-radius: 20px;
+    padding: 0px 10px 0px 10px;
+    margin:0px 0px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    color: whitesmoke;
+    background: rgb(255, 0, 0);
+    transition: background 500ms;
+}
