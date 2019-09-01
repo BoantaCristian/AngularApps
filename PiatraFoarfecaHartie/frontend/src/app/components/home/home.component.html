@@ -1,0 +1,66 @@
+<mat-card class="flexBox">
+    <div class="flexElement">
+        <button mat-raised-button routerLink="/newplayer">Create a new player</button>
+    </div>
+    <mat-form-field class="option">
+        <mat-label>Select player</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let player of players" [value]="player.player" (click) = "selectPlayer(player, player._id)">
+            {{ player.player }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-card>
+
+<mat-card class="content">
+
+    <h2 *ngIf="playerSelected === false" class="flexPlayer">Waiting for player...</h2>
+    <div *ngFor="let player of players" class="flexBox">
+        <h2 *ngIf="playerSelected === true && player._id === selectedId" class="flexPlayer">{{player.player}}</h2>
+        <h2 *ngIf="playerSelected === true && player._id === selectedId" class="flexPlayer">Computer</h2>
+    </div>
+    
+    <img src='assets/rps.png' *ngIf="playerSelected === false" class="flexPlayer imageBig">
+    
+    <div *ngFor="let player of players">
+        <div *ngIf="player._id === selectedId">
+
+            <div class="flexBox">
+                <h2 *ngIf="playerSelected === true" class="flexPlayer">{{player.score}}</h2>
+                <h2 *ngIf="playerSelected === true" class="flexPlayer">{{player.computerScore}}</h2>
+            </div>
+
+            <div class="flexBox">
+                <img src="{{rps[0]}}" *ngIf="playerValue === 1" class="flexPlayer image">
+                <img src="{{rps[1]}}" *ngIf="playerValue === 2" class="flexPlayer image">
+                <img src="{{rps[2]}}" *ngIf="playerValue === 3" class="flexPlayer image">
+
+                <img src="{{rps[0]}}" *ngIf="computerValue === 1" class="flexPlayer image">
+                <img src="{{rps[1]}}" *ngIf="computerValue === 2" class="flexPlayer image">
+                <img src="{{rps[2]}}" *ngIf="computerValue === 3" class="flexPlayer image">
+            </div>
+
+            <div class="empty">
+                <div *ngIf="playPressed === true && playerSelected === true" class="loader-frame">
+                    <div class="loader1" id="loader1"></div>
+                    <div class="loader2" id="loader2"></div>
+                    <div class="loader3" id="loader3"></div>
+                    <div class="loader4" id="loader4"></div>
+                </div>
+            </div>
+            <br>
+            
+            <div *ngIf="winner === 0" class="text"> Draw </div>
+            <div *ngIf="winner === 1" class="text"> {{selectedPlayer.player}} wins! </div>
+            <div *ngIf="winner === 2" class="text"> Computer wins! </div>
+        
+            <div *ngIf="playerSelected === true">
+                <br><br><br><br>
+                <button mat-raised-button (click)="play(player._id, player.player, player.score, player.computerScore)"> Play </button>
+            </div>
+        
+        </div>
+
+    </div>
+
+</mat-card>

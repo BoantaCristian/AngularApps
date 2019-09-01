@@ -31,7 +31,7 @@ export class ChipsService {
         rank: 'performant',
         linkpoza: '../../../assets/S9.png',
         logo: '../../../assets/lays.png',
-        bag: false
+        numeComplet: 'Samsung Galaxy S9'
       },
       {
         name: 'Samsung',
@@ -41,7 +41,7 @@ export class ChipsService {
         rank: 'very performant',
         linkpoza: '../../../assets/S10plus.jpg',
         logo: '../../../assets/lays.png',
-        bag: false
+        numeComplet: 'Samsung Galaxy S10 plus'
       },
       {
         name: 'Iphone',
@@ -51,7 +51,7 @@ export class ChipsService {
         rank: 'performant',
         linkpoza: '../../../assets/Iphonex.jpg',
         logo: '../../../assets/chio.jpg',
-        bag: false
+        numeComplet: 'Iphone X '
       },
       {
         name: 'Iphone',
@@ -61,7 +61,7 @@ export class ChipsService {
         rank: 'very performant',
         linkpoza: '../../../assets/IphoneXSMax.jpg',
         logo: '../../../assets/chio.jpg',
-        bag: false
+        numeComplet: 'Iphone XS Max'
       }
     ]
   }

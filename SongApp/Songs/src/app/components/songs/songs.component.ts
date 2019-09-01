@@ -9,16 +9,20 @@ import { Song } from 'src/app/Models/song.model';
 })
 export class SongsComponent implements OnInit {
   
-  songs :Song[] = []
+  songs :Song[] = [];
 
   constructor(private songService : SongsService) {}
 
   ngOnInit() {
-    this.songs = this.songService.getSongs()
+    this.songService.getSongs().subscribe(
+      data => {
+        console.log("We have the response from database througs server",data)
+        this.songs = data 
+      }
+    )
   }
 
-  deleteSong(song: Song) {
-    this.songService.deleteSong(song)
-    console.log('component delete:',song)
+  deleteSong(id) {
+    this.songService.deleteSong(id).subscribe()
   }
 }

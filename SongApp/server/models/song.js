@@ -8,4 +8,5 @@ let SongSchema = new Schema({
 })
 const Song = mongoose.model('Song', SongSchema)
 
-module.expors = Song;
+module.exports = Song; // ES5
+//export default Song;     //ES6

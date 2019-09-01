@@ -31,7 +31,7 @@ export class ChipsService {
         gramaj: '300',
         linkpoza: '../../../assets/LaysClassic.jpg',
         logo: '../../../assets/lays.png',
-        bag: false
+        numeComplet: 'Lays Classic'
       },
       {
         name: 'Lays',
@@ -41,7 +41,7 @@ export class ChipsService {
         gramaj: '300',
         linkpoza: '../../../assets/LaysCheese.jpg',
         logo: '../../../assets/lays.png',
-        bag: false
+        numeComplet: 'Lays Cheese'
       },
       {
         name: 'Chio',
@@ -51,7 +51,7 @@ export class ChipsService {
         gramaj: '240',
         linkpoza: '../../../assets/ChioPaprika.jpg',
         logo: '../../../assets/chio.jpg',
-        bag: false
+        numeComplet: 'Chio Paprika'
       },
       {
         name: 'Chio',
@@ -61,7 +61,7 @@ export class ChipsService {
         gramaj: '240',
         linkpoza: '../../../assets/ChioChicken.jpg',
         logo: '../../../assets/chio.jpg',
-        bag: false
+        numeComplet: 'Chio Chicken'
       }
     ]
   }

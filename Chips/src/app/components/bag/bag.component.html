@@ -1,3 +1,62 @@
 <mat-card>
-  About this app
+  <div class="song">
+    <button class="song-buton" mat-raised-button color="primary" (click)="playSong()">{{playValue}}</button>
+    <div class="song-description">Listen to the newest song</div>
+    <div class="play-bar" *ngIf="playing">
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+      <div class="obj"></div>
+    </div>
+
+    <div class="play-bar" *ngIf="!playing">
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+      <div class="obj-static"></div>
+    </div>
+  </div>
 </mat-card>
+
+<mat-card>
+  <div class="title">
+    Gallery
+  </div>
+  <br>
+  <mat-grid-list cols="4" rowHeight="200px" style="width: 90%; margin: auto;">
+    <mat-grid-tile 
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows">
+      <img src="{{tile.linkpoza}}">
+    </mat-grid-tile>
+  </mat-grid-list>    
+  <br><br>
+</mat-card>
+
+<br>
+
+<mat-card>
+  <div class="title">
+    This is an app used for chips electronic commerce
+  </div>
+  <div class="container">
+    <div class="video">
+      <iframe width="90%" height="515" src="https://www.youtube.com/embed/zS7RsMjadO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <iframe src="https://wego.here.com/directions/mix//Facultatea-de-Automatic%C4%83,-Bulevardul-Decebal,-200440-Craiova:642jx7ps-2f6c482fae9e0f8a7a6165850f12fa70?map=44.30832,23.83422,15,normal" style="width:90%;height:450px;"></iframe>
+    </div>
+ </div>
+</mat-card>
+<br>

@@ -1,11 +1,7 @@
 mat-card {
-    width: 70%;
+    width: 65%;
     margin: auto;
     margin-top: 10px;
-}
-
-mat-accordion{
-    margin: 10px;
 }
 
 .toolbar {
@@ -81,4 +77,22 @@ button{
 
 .checkout{
     text-align: center;
+}
+
+.flex-bar{
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+
+
+.flex-button{
+    position: relative;
+    top: 11px;
+    padding: 0;
+    height: 35px;
+}
+
+.input{
+    width: 250px;
 }

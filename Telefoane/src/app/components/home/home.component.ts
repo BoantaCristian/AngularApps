@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ChipsService} from '../../services/chips.service'
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,6 +24,11 @@ export class HomeComponent implements OnInit {
     }
   ]
 
+  filteredOptions: Observable<string[]>;
+  myControl:FormControl = new FormControl();
+  options: string[] = [ 'iphone', 'samsung', 'galaxy', 's9', 's10 plus', 'xs max', 'iphone x', 'samsung galaxy s9', 'samsung galaxy s10 plus', 'iphone xs max', 'iphone x ' ];
+
+  name: string
   chips = []
   bag = []
   total = 0
@@ -29,6 +37,28 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.chips = this.chipsService.getChips() 
     this.bag = this.chipsService.getBag() 
+
+    this.filteredOptions = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  Search(){
+    if(this.name === ""){
+      this.chips = this.chipsService.getChips()
+    } else {
+        this.chips = this.chips.filter(res => {
+          return res.numeComplet.toLocaleLowerCase().match(this.name.toLocaleLowerCase())
+        })
+      }
   }
 
   All(event){

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ChipsService} from '../../services/chips.service'
+import {chipsModel} from '../../model/chips.model'
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,7 +25,12 @@ export class HomeComponent implements OnInit {
       value:'Chio'
     }
   ]
+  filteredOptions: Observable<string[]>;
+  myControl:FormControl = new FormControl();
+  options: string[] = [ 'cheese', 'chicken', 'chio', 'classic', 'lays', 'paprika', 'lays classic', 'lays cheese', 'chio paprika', 'chio chicken' ];
 
+  name: string
+  chipsModel: chipsModel
   chips = []
   bag = []
   total = 0
@@ -29,6 +39,29 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.chips = this.chipsService.getChips() 
     this.bag = this.chipsService.getBag() 
+
+    this.filteredOptions = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  SearchRealTime(){} // SearchRealTime() = Search()
+  Search(){
+    if(this.name === ""){
+      this.chips = this.chipsService.getChips()
+    } else {
+        this.chips = this.chips.filter(res => {
+          return res.numeComplet.toLocaleLowerCase().match(this.name.toLocaleLowerCase())
+        })
+      }
   }
 
   All(event){

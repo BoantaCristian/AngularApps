@@ -1,0 +1,10 @@
+<mat-card>
+    <h1>Create player</h1>
+    <form>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="newName" name="name" placeholder="Enter your name here!">
+        </mat-form-field>
+        <button mat-raised-button class="button" type="submit" (click)="createPlayer()"> Create </button>
+    </form>
+    <button mat-raised-button routerLink="/" class="button">Back</button>
+</mat-card>

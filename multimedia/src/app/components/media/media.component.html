@@ -1,0 +1,36 @@
+<mat-card>
+  <div class="song">
+    <button class="song-buton" mat-raised-button (click)="playSong()">{{playValue}}</button>
+    <div class="song-description">Audio multimedia</div>
+  </div>
+</mat-card>
+
+<mat-card>
+  <div class="title">
+    Gallery
+  </div>
+  <br>
+  <mat-grid-list cols="4" rowHeight="200px" style="width: 90%; margin: auto;">
+    <mat-grid-tile style="margin: 2px;"
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows">
+      <img src="{{tile.linkpoza}}">
+    </mat-grid-tile>
+  </mat-grid-list>    
+  <br><br>
+</mat-card>
+
+<br>
+
+<mat-card>
+  <div class="title">
+    Here's a video with the story of the coffee!
+  </div>
+  <div class="container">
+    <div class="video">
+      <iframe width="90%" height="550" src="https://www.youtube.com/embed/9KyrhBmsQZU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+ </div>
+</mat-card>
+<br>

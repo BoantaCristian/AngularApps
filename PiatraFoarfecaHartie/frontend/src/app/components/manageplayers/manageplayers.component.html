@@ -1,0 +1,35 @@
+<mat-card>
+    <button mat-raised-button routerLink="/newplayer" class="create">Create a new player</button>
+    <br><br><br><br><br>
+    <mat-list role="list">
+        <mat-list-item class="titles" role="listitem">
+            <div class="flexBox"> Player </div>
+            <div class="flexBox"> Player Score </div>
+            <div class="flexBox"> Computer Score </div>
+            <div class="flexActions"> Actions </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+    <mat-list role="list">
+        <mat-list-item class="info" role="listitem" *ngFor="let player of players">
+            <!--player or edit input player-->
+            <div class="flexBox" *ngIf="editId !== player._id"> {{player.player}} </div>
+            <mat-form-field *ngIf="editId === player._id" class="flexBox"><input matInput type="text" [(ngModel)]="editedPlayer" name="name" value="{{player.player}}" placeholder="new name"></mat-form-field>
+            <div class="flexBox"> {{player.score}} </div>
+            <div class="flexBox"> {{player.computerScore}} </div>
+            <div class="flexActions">
+                <button mat-raised-button (click)="resetScore(player._id, player.player)">reset</button>
+
+                <button mat-raised-button (click)="editMode(player._id, player.player, player.score, player.computerScore)" *ngIf="editId !== player._id">edit</button>
+                <button mat-raised-button (click)="updatePlayer(player._id, player.player, player.score, player.computerScore)" *ngIf="editId === player._id">post</button>
+                
+                <button mat-raised-button (click)="deletePlayer(player._id)" *ngIf="editId !== player._id" class="delete">delete</button>
+                <button mat-raised-button (click)="cancel()" *ngIf="editId === player._id" class="delete">cancel</button>
+            </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+    <br>
+    <button mat-raised-button routerLink="/" class="button">Back</button>
+</mat-card>

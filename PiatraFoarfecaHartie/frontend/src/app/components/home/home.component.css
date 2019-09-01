@@ -1,0 +1,133 @@
+mat-card{
+    width: 80% !important;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 40px;
+    background: #616161;
+    color: white;
+}
+
+button{
+    background: #00FF33;
+    color: white;
+    margin: 10px;
+}
+
+button:hover{
+    background: #505050;
+    color: #00FF33;
+}
+
+.text{
+    position: relative;
+    font-size: 24px;
+}
+
+.flexBox{
+    display: flex;
+}
+
+.flexElement{
+    width: 30%;
+}
+
+.flexPlayer{
+    margin: 20px auto;
+    width: 50%;
+}
+
+.option{
+    position: absolute;
+    right: 6%;
+    width: 250px;
+}
+
+.imageBig{
+    width: 40%;
+}
+
+.image{
+    width: 18%;
+}
+
+.content{
+    text-align: center;
+}
+
+/* change the default of matInput colors */
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #00FF33 !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #00FF33 !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #00FF33 !important;;
+  }
+.empty{
+    width: 70px;
+    margin: auto;
+    position: relative;
+}
+  /*loading animation*/
+  .loader-frame{
+      width: 70px;
+      height: 70px;
+      margin: auto;
+      position: fixed;
+  }
+  .loader1, .loader2, .loader3, .loader4{
+      position: absolute;
+      border: 5px solid transparent;
+      border-radius: 50%
+  }
+
+  .loader1{
+      width: 70px;
+      height: 70px;
+      border-top: 5px solid azure;
+      border-bottom: 5px solid azure;
+      animation: clockwisespin 2s linear infinite;
+  }
+
+  .loader2{
+    width: 60px;
+    height: 60px;
+    border-left: 5px solid #00FF33;
+    border-right: 5px solid #00FF33;
+    top: 5px; left: 5px;
+    animation: anticlockwisespin 2s linear infinite;
+  }
+
+  .loader3{
+    width: 40px;
+    height: 40px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    top: 15px; left: 15px;
+    animation: anticlockwisespin 8s linear infinite;
+  }
+
+  .loader4{
+    width: 20px;
+    height: 20px;
+    border-left: 5px solid #00FF33;
+    border-right: 5px solid #00FF33;
+    top: 25px; left: 25px;
+    animation: clockwisespin 1s linear infinite;
+  }
+
+  @keyframes clockwisespin{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+  } 
+
+  @keyframes anticlockwisespin{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(-360deg);}
+  }

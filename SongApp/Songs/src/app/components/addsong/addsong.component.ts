@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SongsService } from 'src/app/services/songs.service'
+import { Song } from 'src/app/Models/song.model';
 
 @Component({
   selector: 'app-addsong',
@@ -25,7 +26,7 @@ export class AddsongComponent implements OnInit {
 
     this.songsService.addSong(title, author).subscribe(
       data => {
-        console.log("Wheve the response from server",data)
+        console.log("We heve the response from server AddSong",data)
       }
     )
   }

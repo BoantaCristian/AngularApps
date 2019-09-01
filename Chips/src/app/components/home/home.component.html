@@ -1,13 +1,30 @@
 <mat-card>
-  <div class="title">Here are the best flavoured chips!</div>
-  <mat-form-field>
-    <mat-select placeholder="Select category">
-      <mat-option value="All" (click)="All($event)" id = "All"> All </mat-option>
-      <mat-option value="Lays" (click)="Lays($event)" id = "Lays"> Lays </mat-option>
-      <mat-option value="Chio" (click)="Chio($event)" id = "Chio"> Chio </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="title">Here are the best flavoured chips!</div><br>
   
+  <div class="flex-bar">
+    <div class="flex-category">
+      <mat-form-field>
+        <mat-select placeholder="Select category">
+          <mat-option value="All" (click)="All($event)" id = "All"> All </mat-option>
+          <mat-option value="Lays" (click)="Lays($event)" id = "Lays"> Lays </mat-option>
+          <mat-option value="Chio" (click)="Chio($event)" id = "Chio"> Chio </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="flex-search">
+        <mat-form-field class="input">                                   <!-- SearchRealTime() = Search() -->
+          <input type="text" placeholder="Search" [(ngModel)]="name" (input)="SearchRealTime()" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+          
+
+      </div>
+    <button mat-raised-button color="primary" class="flex-button" (click)="Search()">Search</button>
+  </div>
   <!-- 
     <mat-select *ngFor="let company of companies" placeholder="Select category">
       <mat-option [value]="company.value" (click)="Function($event)" [id] = "company.value"> {{company.value}} </mat-option>
@@ -60,6 +77,11 @@
     </div>
   </mat-accordion>
 </mat-card>
+
+<br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+<br><br><br><br>
 
 <!--Footer-->
 <div class="footer-color">

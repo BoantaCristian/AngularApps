@@ -1,12 +1,14 @@
-<div>
-  <h1>All songs</h1>
-    <div class="box">
-        <div class="title">Title</div>
-        <div class="author">Author</div>
-    </div>
-    <div class="box" *ngFor="let song of songs">
+ <h1>All songs</h1>
+<div class="box">
+    <div class="title">Title</div>
+    <div class="title">Author</div>
+</div>
+<br>
+<mat-list style="width: 60%; margin: 0 auto;">
+    <mat-list-item class="content" *ngFor="let song of songs">
         <div class="song">{{song.title}} </div> 
         <div class="artist">{{song.author}}</div>
-        <button class="delete" (click)="deleteSong(song)">Delete</button>
-    </div>
-</div>
+        <button class="delete" (click)="deleteSong(song._id)">Delete</button>
+    </mat-list-item>
+</mat-list>
+    
