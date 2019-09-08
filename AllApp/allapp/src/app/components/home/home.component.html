@@ -1,0 +1,31 @@
+<mat-card>
+    <br>
+    <button mat-raised-button routerLink="/create">Create</button>
+    <button mat-raised-button routerLink="/manage" class="manage">Manage</button>
+    <mat-list style="border-radius: 50px;">
+        <div class="flexBox title">
+            <div class="flex">Name</div>
+            <div class="flex">First Name</div>
+            <div class="flex">Sex</div>
+            <div class="flex">Age</div>
+        </div>
+        <div class="divider"></div>      
+        <mat-list-item *ngFor="let pers of people">
+            <div class="flex">{{ pers.name }}</div>
+            <div class="flex">{{ pers.firstName }}</div>
+            <div class="flex">{{ pers.sex }}</div>
+            <div class="flex">{{ pers.age }}</div>
+        </mat-list-item>
+    </mat-list>
+    <div class="content">
+        <div class="title">Filter</div><br>
+        <mat-form-field class="field">
+            <input matInput name="searchName" [(ngModel)]="searchName" (input)="Search()" placeholder="search here">
+        </mat-form-field><br><br><br>
+        <div class="flexBox">
+            <mat-list-item *ngFor="let pers of peopleToFilter" class="flex">
+                {{ pers.name }}
+            </mat-list-item>
+        </div>
+    </div>
+</mat-card>

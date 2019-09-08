@@ -1,0 +1,94 @@
+mat-card{
+    background: none;
+    border: none;
+    box-shadow: none !important;
+    width: 75%;    
+    margin: 0 auto;
+}
+
+.content{
+    box-shadow: none !important;
+    width: 100%;    
+    margin: 25px auto;
+    background: rgba(255, 255, 255, 0.219);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+mat-list-item{
+    color: white !important;
+}
+
+button{
+    background:  linear-gradient(150deg, #9c88ff,#554a8d );
+    color: white;
+}
+
+mat-list{
+    background: rgba(255, 255, 255, 0.219);
+    width: 100%;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.divider{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: solid 1px rgba(255, 255, 255, 0.452);
+    border-radius: 40%;
+}
+
+.flexBox{
+    display: flex;
+    color: white;
+}
+
+.flex{
+    flex: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: white;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.field{
+    position: absolute;
+    left: 80px;
+}
+
+.manage{
+    position: absolute;
+    right: 0;
+}
+
+/* change the default of matInput colors */
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #554a8d !important;
+   }
+
+   ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #554a8d !important;;
+  }

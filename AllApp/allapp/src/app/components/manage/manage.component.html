@@ -1,0 +1,50 @@
+<mat-card>
+    <br>
+    <button mat-raised-button routerLink="/">Back</button>
+    <mat-list>
+        <div class="flexBox title">
+            <div class="flex">Name</div>
+            <div class="flex">F. Name</div>
+            <div class="flex">Sex</div>
+            <div class="flex">Age</div>
+            <div class="flex">Edit</div>
+            <div class="flex">Delete</div>
+        </div>
+        <div class="divider"></div>      
+        <mat-list-item *ngFor="let pers of people">
+            <!--Display mode-->
+            <div *ngIf="updateId !== pers._id" class="flex">{{ pers.name }}</div>
+            <div *ngIf="updateId !== pers._id" class="flex">{{ pers.firstName }}</div>
+            <div *ngIf="updateId !== pers._id" class="flex">{{ pers.sex }}</div>
+            <div *ngIf="updateId !== pers._id" class="flex">{{ pers.age }}</div>
+            <div *ngIf="updateId !== pers._id" class="flex"><button mat-raised-button (click)="editMode(pers._id, pers.name, pers.firstName, pers.sex, pers.age)" >Edit</button></div>
+            <div *ngIf="updateId !== pers._id" class="flex"><button mat-raised-button (click)="deletePerson(pers._id)">Delete</button></div>
+            <!--Edit mode-->
+                <mat-form-field class="flex" *ngIf="updateId === pers._id">
+                    <input matInput type="text" [(ngModel)]="updateName" name="updateName" value="{{updateName}}">
+                </mat-form-field>
+
+                <mat-form-field class="flex" *ngIf="updateId === pers._id">
+                    <input matInput type="text" [(ngModel)]="updateFirstName" name="updateFirstName" value="{{updateFirstName}}">
+                </mat-form-field>
+
+                <mat-form-field class="flex" *ngIf="updateId === pers._id">
+                    <mat-label> {{updateSex}} </mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let gender of genders" [value]="gender" (click)="selectGender(gender)"> {{gender}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-slider class="flex" *ngIf="updateId === pers._id" [value]="updateAge" [(ngModel)]="updateAge" name="age"
+                    thumbLabel
+                    min="1"
+                    max="100">
+                </mat-slider>
+
+                <div class="flex" *ngIf="updateId === pers._id"><button mat-raised-button (click)="editPerson()" >Post</button></div>
+                <div class="flex" *ngIf="updateId === pers._id"><button mat-raised-button (click)="cancelEdit()">Cancel</button></div>
+                
+            
+        </mat-list-item>
+    </mat-list>
+</mat-card>

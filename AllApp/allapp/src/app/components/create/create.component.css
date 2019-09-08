@@ -1,0 +1,63 @@
+mat-card{
+    background: none;
+    border: none;
+    box-shadow: none !important;
+    width: 70%;    
+    margin: 0 auto;
+}
+
+.content{
+    box-shadow: none !important;
+    width: 600px;    
+    margin: 25px auto;
+    background: rgba(255, 255, 255, 0.219);
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+button{
+    background:  linear-gradient(150deg, #9c88ff,#554a8d );
+    color: white;
+}
+
+.formular{
+    background: rgba(255, 255, 255, 0.219);
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.field{
+    width: 60%;
+    margin: 8px;
+    color: white;
+}
+
+.title{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* change the default of matInput colors */
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #554a8d !important;
+   }
+
+   ::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: #554a8d !important;;
+  }

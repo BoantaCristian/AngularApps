@@ -1,0 +1,27 @@
+<mat-card>
+    <br>
+    <button mat-raised-button routerLink=""> Back </button>
+    <div class="content">
+        <div class="title">Create new person</div>
+        <form>
+            <mat-form-field class="field">
+                <input matInput type="text" placeholder="Name" [(ngModel)]="newName" name="newName">
+            </mat-form-field>
+            <mat-form-field class="field">
+                <input matInput type="text" placeholder="First Name" [(ngModel)]="newFirstName" name="newFirstName">
+            </mat-form-field>
+            <mat-form-field class="field">
+                <mat-label> Select gender </mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let gender of genders" [value]="gender" (click)="selectGender(gender)"> {{gender}} </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-slider class="field" [value]="age" [(ngModel)]="age" name="age"
+                thumbLabel
+                min="1"
+                max="100">
+            </mat-slider><br>
+        </form><br>
+        <button mat-raised-button type="submit" (click)=createPerson() > Create </button><br><br><br>
+    </div>
+</mat-card>
