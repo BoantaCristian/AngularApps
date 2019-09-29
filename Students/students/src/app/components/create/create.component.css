@@ -1,0 +1,48 @@
+mat-card{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.274);
+    color: white;
+    text-align: center;
+}
+
+mat-form-field{
+    width: 60% !important;
+    height: 100% !important;
+}
+
+::ng-deep .mat-select-value{    
+    color: white!important;  }
+
+button{
+    background-color: #fd79a8;
+    color: white;
+}
+
+.title{
+    margin: 20px auto;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+a:hover {
+    color:#ffb1cc;
+    transition: 400ms;
+}

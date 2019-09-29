@@ -1,0 +1,36 @@
+<div class="container">
+    <a routerLink=""> ➜ back </a>
+</div>
+<mat-card>
+    <br>
+    <div class="title">New student</div>
+    <form>
+        <mat-form-field>
+            <input matInput [(ngModel)]="newName" name="newName" placeholder="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="newFirstName" name="newFirstName" placeholder="first name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>sex</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let gender of genders" [value]=gender (click)="selectSex(gender)"> {{gender}}  </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+        <mat-label style="color: rgb(80, 80, 80)">age </mat-label>
+        <mat-slider style="width: 55%; margin-top: 10px;" [value]="newAge" [(ngModel)]="newAge" name="newAge" thumbLabel min=18 max=50></mat-slider>
+        <mat-form-field>
+            <mat-label>Specialization</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let specialization of specializations" [value]=specialization (click)="selectSpecialization(specialization)"> {{specialization}}  </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Year</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let year of years" [value]=year (click)="selectYear(year)"> {{year}}  </mat-option>
+            </mat-select>
+        </mat-form-field><br><br>
+        <button mat-raised-button (click)="addStudent(newName, newFirstName, newSex, newAge, newSpecialization, newYear)">Create</button><br><br>
+    </form>
+</mat-card>

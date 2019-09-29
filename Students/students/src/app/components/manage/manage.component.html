@@ -1,0 +1,67 @@
+<div>
+    <div class="container">
+        <a routerLink=""> ➜ back</a>
+    </div>
+    <mat-card>
+        <div class="title">Manage students</div><br><br>
+
+        
+        <div class="flexContainer">
+            <div class="flexTitle" > Name </div>
+            <div class="flexTitle" > First Name </div>
+            <div class="flexTitle" > Sex </div>
+            <div class="flexTitle" > Age </div>
+            <div class="flexTitle" > Specialization </div>
+            <div class="flexTitle" > Year </div>
+            <div class="flexTitle" > Edit </div>
+            <div class="flexTitle" > Delete </div>
+        </div>
+
+        <div class="divider"></div>
+        <div *ngFor="let stud of students" >
+
+            <div *ngIf="stud._id !== editId" class="flexContainer">
+                <div class="flexContent"> {{stud.name}} </div>
+                <div class="flexContent"> {{stud.firstName}} </div>
+                <div class="flexContent"> {{stud.sex}} </div>
+                <div class="flexContent"> {{stud.age}} </div>
+                <div class="flexContent"> {{stud.specialization}} </div>
+                <div class="flexContent"> {{stud.year}} </div>
+                <button class="flexContent editButton" (click)="editStudent(stud._id, stud.name, stud.firstName, stud.sex, stud.age, stud.specialization, stud.year)">Edit</button>
+                <button class="flexContent deleteButton" (click)="deleteStudent(stud._id)">Delete</button>
+            </div>
+
+            <div *ngIf="stud._id === editId" class="flexContainer">
+                <mat-form-field class="flexContent">
+                    <input matInput [(ngModel)]="name" name="name" value="{{name}}">
+                </mat-form-field>
+                <mat-form-field class="flexContent">
+                    <input matInput [(ngModel)]="firstName" name="firstName" value="{{firstName}}">
+                </mat-form-field>
+                <mat-form-field class="flexContent">
+                    <mat-label> {{sex}} </mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let gender of genders" [value]="gender" (click)="selectGender(gender)"> {{gender}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="flexContent">
+                    <input class="age" matInput [(ngModel)]="age" name="age" value="{{age}}">
+                </mat-form-field>
+                <mat-form-field class="flexContent">
+                    <mat-label> {{specialization}} </mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let specialization of specializations" [value]="specialization" (click)="selectSpecialization(specialization)"> {{specialization}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="flexContent">
+                    <mat-label> {{year}} </mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let year of years" [value]="year" (click)="selectYear(year)"> {{year}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button class="flexContent editButton" (click)="updateStudent()">Post</button>
+                <button class="flexContent deleteButton" (click)="cancelEdit()">Cancel</button>
+                </div>
+        </div>
+    </mat-card>
+</div>

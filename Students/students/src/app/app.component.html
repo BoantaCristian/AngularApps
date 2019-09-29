@@ -1,0 +1,11 @@
+<div class="bg">
+    <mat-toolbar>
+        <span>Students App</span>
+        <button mat-raised-button class="managePlayers" 
+                routerLink="manage"
+                routerLinkActive="linkActive" 
+                [routerLinkActiveOptions]="{exact: true}">Manage Students
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>

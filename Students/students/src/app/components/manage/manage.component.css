@@ -1,0 +1,129 @@
+mat-card{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.274);
+    color: white;
+}
+::ng-deep .mat-form-field{
+    width: 7% !important;
+    height: 10px !important;
+    top: -20px;
+  }
+
+.container{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+.search{
+    position: absolute;
+    top: 72px;
+    right: 13%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+a:hover {
+    color:#ffb1cc;
+    transition: 400ms;
+}
+
+button{
+    background-color: #fd79a8;
+    color: white;
+}
+
+.editButton{
+    background: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: none;
+    padding: 10px;
+}
+
+.editButton:hover{
+    cursor: pointer;
+    background: #ffffff4b;
+    border-radius: 20px;
+    transition: 500ms;
+}
+
+.deleteButton{
+    color: red;
+    background: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: none;
+    padding: 10px;
+}
+
+.deleteButton:hover{
+    cursor: pointer;
+    color: white;
+    background: #ff2c2c3f;
+    border-radius: 20px;
+    transition: 500ms;
+}
+
+.title{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.flexContainer{
+    display: flex;
+}
+
+.flexTitle{
+    flex: 12.5%;
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.flexContent{
+    flex: 12.5%;
+    width: 12.5%;
+    text-align: center;
+    margin: 15px;
+}
+
+.divider{
+    border: solid rgba(255, 255, 255, 0.479) 2px;
+    border-radius: 40%;
+    margin: 8px auto;
+}
+
+.sort{
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+
+::ng-deep.mat-form-field-underline {
+/*change color of underline*/
+background-color: white !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+/*change color of underline when focused*/
+background-color: white !important;;
+}
+::ng-deep.mat-form-field-empty {
+    color: white !important;
+}

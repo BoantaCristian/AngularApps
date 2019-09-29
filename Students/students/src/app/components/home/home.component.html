@@ -1,0 +1,39 @@
+<div>
+    <div class="container">
+        <a routerLink="/create"> ➜ Create</a> a new student!
+        <form class="search">
+            <mat-form-field>
+                <input matInput [(ngModel)]="searchName" name="searchName" (input)="search()" placeholder="search student">
+            </mat-form-field>
+        </form>
+    </div>
+    <mat-card>
+        <div class="title">List of students</div><br><br>
+
+        <div class="sort" *ngIf="sortedByName === true && sorted === true">Sorted by Name</div>
+        <div class="sort" *ngIf="sortedByFirstName === true && sorted === true">Sorted by First Name</div>
+        <div class="sort" *ngIf="sortedBySex === true && sorted === true">Sorted by Sex</div>
+        <div class="sort" *ngIf="sortedByAge === true && sorted === true">Sorted by Age</div>
+        <div class="sort" *ngIf="sortedBySpecialization === true && sorted === true">Sorted by Specialization</div>
+        <div class="sort" *ngIf="sortedByYear === true && sorted === true">Sorted by Year</div>
+        
+        <div class="flexContainer">
+            <div class="flexTitle" (click)="sortName()"> Name </div>
+            <div class="flexTitle" (click)="sortFirstName()"> First Name </div>
+            <div class="flexTitle" (click)="sortSex()"> Sex </div>
+            <div class="flexTitle" (click)="sortAge()"> Age </div>
+            <div class="flexTitle" (click)="sortSpecialization()"> Specialization </div>
+            <div class="flexTitle" (click)="sortYear()"> Year </div>
+        </div>
+        <div class="divider"></div>
+        
+        <div *ngFor="let stud of students" class="flexContainer">
+            <div class="flexContent"> {{stud.name}} </div>
+            <div class="flexContent"> {{stud.firstName}} </div>
+            <div class="flexContent"> {{stud.sex}} </div>
+            <div class="flexContent"> {{stud.age}} </div>
+            <div class="flexContent"> {{stud.specialization}} </div>
+            <div class="flexContent"> {{stud.year}} </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,101 @@
+mat-card{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.274);
+    color: white;
+}
+
+mat-form-field{
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+}
+
+.container{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+.search{
+    position: absolute;
+    top: 72px;
+    right: 13%;
+}
+
+a{
+    text-decoration: none;
+    color: #ffb1cc;
+    font-size: 20px;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    transition: 400ms;
+}
+
+button{
+    background-color: #fd79a8;
+    color: white;
+}
+
+.title{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.flexContainer{
+    display: flex;
+}
+
+.flexTitle{
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.flexTitle:hover{
+    cursor: pointer;
+}
+
+.flexContent{
+    flex: 1;
+    text-align: center;
+    margin: 15px;
+}
+
+.divider{
+    border: solid rgba(255, 255, 255, 0.479) 2px;
+    border-radius: 40%;
+    margin: 8px auto;
+}
+
+.sort{
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+}
+
+::ng-deep.mat-form-field-underline {
+/*change color of underline*/
+background-color: white !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+/*change color of underline when focused*/
+background-color: white !important;;
+}
+::ng-deep.mat-form-field-empty {
+    color: white !important;
+}
